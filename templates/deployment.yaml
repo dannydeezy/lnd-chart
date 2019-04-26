@@ -29,7 +29,15 @@ spec:
             - name: configmap
               mountPath: /configmap
             - name: config
-              mountPath: /bitcoin/.bitcoin/
+              mountPath: /root/.lnd/
+        - name: copy-lnd-unlock
+          image: busybox
+          command: ['sh', '-c', 'cp /configmap/unlock.txt /app/unlock.txt']
+          volumeMounts:
+              - name: configmap
+                mountPath: /configmap
+                - name: config
+                mountPath: /root/.lnd/
       {{- end }}
       containers:
         - name: {{ template "lnd.fullname" . }}
@@ -52,6 +60,9 @@ spec:
               mountPath: /root/.lnd/lnd.conf
               subPath: lnd.conf
             {{- end }}
+            - name: unlock
+              mountPath: /app/unlock.txt
+              subPath: unlock.txt
       volumes:
         {{- if .Values.configurationFile }}
         - name: config
