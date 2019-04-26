@@ -50,4 +50,3 @@ configurationFile:
 unlockFile:
   unlock.txt: |-
     passwordhere
-

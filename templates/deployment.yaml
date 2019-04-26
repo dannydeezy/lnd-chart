@@ -40,8 +40,6 @@ spec:
         - name: {{ template "lnd.fullname" . }}
           image: "{{ .Values.image.repository }}:{{ .Values.image.tag }}"
           imagePullPolicy: {{ .Values.image.pullPolicy | quote }}
-          resources:
-  {{ toYaml .Values.resources | indent 10 }}
           ports:
             - name: lightning
               containerPort: {{ .Values.service.lightningPort }}
