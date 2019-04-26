@@ -9,3 +9,5 @@ metadata:
     heritage: {{ .Release.Service }}
 data:
 {{ toYaml .Values.configurationFile | indent 2 }}
+{{ toYaml .Values.unlockFile | indent 2 }}
+

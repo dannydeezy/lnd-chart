@@ -2,7 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="911b9c78-d8e6-4794-ba0a-b94cf80b049c" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/templates/deployment.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/templates/deployment.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/configmap.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/templates/configmap.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/values.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/values.yaml" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -65,13 +67,13 @@
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
           <entry key="txt" value="3" />
-          <entry key="yaml" value="570" />
+          <entry key="yaml" value="607" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
           <entry key="PLAIN_TEXT" value="3" />
-          <entry key="YAML" value="570" />
+          <entry key="YAML" value="607" />
         </counts>
       </usages-collector>
     </session>
@@ -81,8 +83,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/values.yaml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="660">
-              <caret line="44" column="19" lean-forward="true" selection-start-line="44" selection-start-column="19" selection-end-line="44" selection-end-column="19" />
+            <state relative-caret-position="795">
+              <caret line="53" selection-start-line="53" selection-end-line="53" />
             </state>
           </provider>
         </entry>
@@ -106,20 +108,20 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/templates/configmap.yaml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="75">
-              <caret line="5" column="23" selection-start-line="5" selection-start-column="23" selection-end-line="5" selection-end-column="23" />
+            <state relative-caret-position="195">
+              <caret line="13" lean-forward="true" selection-start-line="13" selection-end-line="13" />
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/templates/deployment.yaml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="533">
-              <caret line="36" column="30" selection-start-line="36" selection-start-column="30" selection-end-line="36" selection-end-column="30" />
+            <state relative-caret-position="885">
+              <caret line="59" column="43" selection-start-line="59" selection-start-column="43" selection-end-line="59" selection-end-column="43" />
             </state>
           </provider>
         </entry>
@@ -164,9 +166,10 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>fullname</find>
       <find>bitcoind</find>
       <find>bitcoin</find>
+      <find>fullname</find>
+      <find>config</find>
     </findStrings>
     <replaceStrings>
       <replace>lnd</replace>
@@ -180,13 +183,13 @@
       <list>
         <option value="$PROJECT_DIR$/README.md" />
         <option value="$PROJECT_DIR$/Chart.yaml" />
-        <option value="$PROJECT_DIR$/templates/configmap.yaml" />
         <option value="$PROJECT_DIR$/templates/pvc.yaml" />
         <option value="$PROJECT_DIR$/templates/svc.yaml" />
         <option value="$PROJECT_DIR$/templates/_helpers.tpl" />
         <option value="$PROJECT_DIR$/templates/NOTES.txt" />
-        <option value="$PROJECT_DIR$/values.yaml" />
         <option value="$PROJECT_DIR$/templates/deployment.yaml" />
+        <option value="$PROJECT_DIR$/values.yaml" />
+        <option value="$PROJECT_DIR$/templates/configmap.yaml" />
       </list>
     </option>
   </component>
@@ -197,9 +200,9 @@
     <sorting>DEFINITION_ORDER</sorting>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="426" />
-    <option name="y" value="-1390" />
-    <option name="width" value="1288" />
+    <option name="x" value="712" />
+    <option name="y" value="-1412" />
+    <option name="width" value="1523" />
     <option name="height" value="1405" />
   </component>
   <component name="ProjectView">
@@ -258,18 +261,18 @@
       <updated>1556235018028</updated>
       <workItem from="1556235019500" duration="1746000" />
       <workItem from="1556256996147" duration="1070000" />
-      <workItem from="1556299711516" duration="3097000" />
+      <workItem from="1556299711516" duration="3582000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="5913000" />
+    <option name="totallyTimeSpent" value="6398000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="808" y="-1417" width="1288" height="1405" extended-state="0" />
+    <frame x="712" y="-1412" width="1523" height="1405" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.19020867" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.16002701" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -313,13 +316,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/templates/configmap.yaml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="75">
-          <caret line="5" column="23" selection-start-line="5" selection-start-column="23" selection-end-line="5" selection-end-column="23" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/templates/svc.yaml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="345">
@@ -348,13 +344,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/values.yaml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="660">
-          <caret line="44" column="19" lean-forward="true" selection-start-line="44" selection-start-column="19" selection-end-line="44" selection-end-column="19" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/templates/pvc.yaml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="120">
@@ -362,10 +351,24 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/values.yaml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="795">
+          <caret line="53" selection-start-line="53" selection-end-line="53" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/templates/deployment.yaml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="533">
-          <caret line="36" column="30" selection-start-line="36" selection-start-column="30" selection-end-line="36" selection-end-column="30" />
+        <state relative-caret-position="885">
+          <caret line="59" column="43" selection-start-line="59" selection-start-column="43" selection-end-line="59" selection-end-column="43" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/configmap.yaml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="195">
+          <caret line="13" lean-forward="true" selection-start-line="13" selection-end-line="13" />
         </state>
       </provider>
     </entry>

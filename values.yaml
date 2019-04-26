@@ -46,6 +46,8 @@ configurationFile:
     bitcoin.active=1
     bitcoin.mainnet=1
     alias=Lnd Helm
+
+unlockFile:
   unlock.txt: |-
     passwordhere
 
