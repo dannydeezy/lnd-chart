@@ -34,10 +34,10 @@ spec:
           image: busybox
           command: ['sh', '-c', 'cp /configmap/unlock.txt /app/unlock.txt']
           volumeMounts:
-              - name: configmap
-                mountPath: /configmap
-                - name: config
-                mountPath: /root/.lnd/
+            - name: configmap
+              mountPath: /configmap
+            - name: config
+              mountPath: /root/.lnd/
       {{- end }}
       containers:
         - name: {{ template "lnd.fullname" . }}
