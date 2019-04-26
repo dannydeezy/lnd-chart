@@ -3,8 +3,8 @@
 # Declare variables to be passed into your templates.
 
 image:
-  repository: guggero/lnd-unlocker
-  tag: with-lnd
+  repository: gcr.io/lightning-sandbox/lnd
+  tag: latest
   pullPolicy: IfNotPresent
 
 service:
@@ -46,7 +46,3 @@ configurationFile:
     bitcoin.active=1
     bitcoin.mainnet=1
     alias=Lnd Helm
-
-unlockFile:
-  unlock.txt: |-
-    passwordhere
