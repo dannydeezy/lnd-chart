@@ -59,7 +59,7 @@ spec:
             - name: config
               mountPath: /root/.lnd/lnd.conf
               subPath: lnd.conf
-           {{- end }}
+            {{- end }}
       volumes:
         {{- if .Values.configurationFile }}
         - name: config
