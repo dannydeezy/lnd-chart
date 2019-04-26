@@ -67,6 +67,8 @@ spec:
         {{- if .Values.configurationFile }}
         - name: config
           emptyDir: {}
+        - name: unlock
+          emptyDir: {}}
         - name: configmap
           configMap:
             name: {{ template "lnd.fullname" . }}
