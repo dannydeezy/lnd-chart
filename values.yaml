@@ -1,0 +1,49 @@
+# Default values for bitcoind.
+# This is a YAML-formatted file.
+# Declare variables to be passed into your templates.
+
+image:
+  repository: guggero/lnd-unlocker
+  tag: with-lnd
+  pullPolicy: IfNotPresent
+
+service:
+  restPort: 8080
+  lightningPort: 9735
+  rpcPort: 10009
+
+persistence:
+  enabled: true
+  ## database data Persistent Volume Storage Class
+  ## If defined, storageClassName: <storageClass>
+  ## If set to "-", storageClassName: "", which disables dynamic provisioning
+  ## If undefined (the default) or set to null, no storageClassName spec is
+  ##   set, choosing the default provisioner.  (gp2 on AWS, standard on
+  ##   GKE, AWS & OpenStack)
+  ##
+  # storageClass: "-"
+  accessMode: ReadWriteOnce
+  size: 100Gi
+
+## Configure resource requests and limits
+## ref: http://kubernetes.io/docs/user-guide/compute-resources/
+##
+resources: {}
+#  requests:
+#    memory: 512Mi
+#    cpu: 300m
+
+# Custom bitcoind configuration file used to override default bitcoind settings
+configurationFile:
+  lnd.conf: |-
+    bitcoin.node=bitcoind
+    bitcoind.rpchost=35.233.229.74
+    bitcoind.rpcuser=bitgo
+    bitcoind.rpcpass=hodl
+    bitcoind.zmqpubrawblock=tcp://35.233.229.74:18500
+    bitcoind.zmqpubrawtx=tcp://35.233.229.74:18501
+    debuglevel=info
+    bitcoin.active=1
+    bitcoin.mainnet=1
+    alias=Lnd Helm
+

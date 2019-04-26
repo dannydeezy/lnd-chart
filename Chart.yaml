@@ -1,0 +1,10 @@
+apiVersion: v1
+name: lnd
+version: 0.0.1
+appVersion: 0.6.0
+description: Lightning
+sources:
+maintainers:
+  - name: danny-diekroeger
+    email: danny@bitgo.com
+engine: gotpl
