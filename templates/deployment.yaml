@@ -52,14 +52,14 @@ spec:
           volumeMounts:
             - name: data
               mountPath: /root
+            - name: unlock
+              mountPath: /app/unlock.txt
+              subPath: unlock.txt
             {{- if .Values.configurationFile }}
             - name: config
               mountPath: /root/.lnd/lnd.conf
               subPath: lnd.conf
-            {{- end }}
-            - name: unlock
-              mountPath: /app/unlock.txt
-              subPath: unlock.txt
+           {{- end }}
       volumes:
         {{- if .Values.configurationFile }}
         - name: config
