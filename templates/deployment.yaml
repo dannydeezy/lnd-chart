@@ -25,11 +25,6 @@ spec:
         - name: copy-lnd-config
           image: busybox
           command: ['sh', '-c', 'cp /configmap/lnd.conf /root/.lnd/lnd.conf']
-          volumeMounts:
-            - name: configmap
-              mountPath: /configmap
-            - name: config
-              mountPath: /root/.lnd/
         - name: copy-lnd-unlock
           image: busybox
           command: ['sh', '-c', 'cp /configmap/unlock.txt /app/unlock.txt']
@@ -38,6 +33,8 @@ spec:
               mountPath: /configmap
             - name: config
               mountPath: /root/.lnd/
+            - name: unlock
+              mountPath: /app/
       {{- end }}
       containers:
         - name: {{ template "lnd.fullname" . }}
