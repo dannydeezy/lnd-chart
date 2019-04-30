@@ -37,12 +37,12 @@ resources: {}
 configurationFile:
   lnd.conf: |-
     bitcoin.node=bitcoind
-    bitcoind.rpchost=35.233.229.74
-    bitcoind.rpcuser=bitgo
-    bitcoind.rpcpass=hodl
-    bitcoind.zmqpubrawblock=tcp://35.233.229.74:18500
-    bitcoind.zmqpubrawtx=tcp://35.233.229.74:18501
+    bitcoind.rpchost=10.47.245.225
+    bitcoind.rpcuser=rpcuser
+    bitcoind.rpcpass=rpcpassword
+    bitcoind.zmqpubrawblock=tcp://10.47.245.225:18500
+    bitcoind.zmqpubrawtx=tcp://10.47.245.225:18501
     debuglevel=info
     bitcoin.active=1
-    bitcoin.mainnet=1
-    alias=Lnd Helm
+    bitcoin.testnet=1
+    alias=Lnd Test Helm
