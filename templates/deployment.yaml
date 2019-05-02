@@ -50,6 +50,10 @@ spec:
               mountPath: /root/.lnd/lnd.conf
               subPath: lnd.conf
             {{- end }}
+          lifecycle:
+            preStop:
+              exec:
+                command: ['/lnd-main/lncli', 'stop']
       volumes:
         {{- if .Values.configurationFile }}
         - name: config
