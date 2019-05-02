@@ -50,6 +50,7 @@ spec:
               mountPath: /root/.lnd/lnd.conf
               subPath: lnd.conf
             {{- end }}
+      terminationGracePeriodSeconds: 15
       volumes:
         {{- if .Values.configurationFile }}
         - name: config
