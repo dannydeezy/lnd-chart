@@ -50,7 +50,10 @@ spec:
               mountPath: /root/.lnd/lnd.conf
               subPath: lnd.conf
             {{- end }}
-      terminationGracePeriodSeconds: 15
+          lifecycle:
+            preStop:
+              exec:
+                command: ['/lnd-main/lncli', '--network=testnet', 'stop']
       volumes:
         {{- if .Values.configurationFile }}
         - name: config
