@@ -45,4 +45,7 @@ configurationFile:
     debuglevel=info
     bitcoin.active=1
     bitcoin.mainnet=1
+    restlisten=0.0.0.0:8080
+    rpclisten=0.0.0.0:10009
+    listen=0.0.0.0:9735
     alias=Lnd Helm
