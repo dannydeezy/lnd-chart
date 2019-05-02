@@ -44,5 +44,8 @@ configurationFile:
     bitcoind.zmqpubrawtx=tcp://10.35.240.77:28333
     debuglevel=info
     bitcoin.active=1
+    restlisten=0.0.0.0:8080
+    rpclisten=0.0.0.0:10009
+    listen=0.0.0.0:9735
     bitcoin.testnet=1
     alias=Lnd Test Helm
