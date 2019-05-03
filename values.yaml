@@ -37,11 +37,11 @@ resources: {}
 configurationFile:
   lnd.conf: |-
     bitcoin.node=bitcoind
-    bitcoind.rpchost=10.35.240.77
+    bitcoind.rpchost=10.35.247.121
     bitcoind.rpcuser=rpcuser
     bitcoind.rpcpass=rpcpassword
-    bitcoind.zmqpubrawblock=tcp://10.35.240.77:28332
-    bitcoind.zmqpubrawtx=tcp://10.35.240.77:28333
+    bitcoind.zmqpubrawblock=tcp://10.35.247.121:28332
+    bitcoind.zmqpubrawtx=tcp://10.35.247.121:28333
     debuglevel=info
     bitcoin.active=1
     restlisten=0.0.0.0:8080
