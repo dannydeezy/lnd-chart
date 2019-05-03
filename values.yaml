@@ -16,7 +16,7 @@ persistence:
   enabled: true
   ## database data Persistent Volume Storage Class
   ## If defined, storageClassName: <storageClass>
-  ## If set to "-", storageClassName: "", which disables dynamic provisioning
+  ## If set to "-", storageClassName: "", which disables dynamic provisioningt
   ## If undefined (the default) or set to null, no storageClassName spec is
   ##   set, choosing the default provisioner.  (gp2 on AWS, standard on
   ##   GKE, AWS & OpenStack)
@@ -37,11 +37,11 @@ resources: {}
 configurationFile:
   lnd.conf: |-
     bitcoin.node=bitcoind
-    bitcoind.rpchost=10.35.247.121
+    bitcoind.rpchost=34.83.14.74
     bitcoind.rpcuser=rpcuser
     bitcoind.rpcpass=rpcpassword
-    bitcoind.zmqpubrawblock=tcp://10.35.247.121:28332
-    bitcoind.zmqpubrawtx=tcp://10.35.247.121:28333
+    bitcoind.zmqpubrawblock=tcp://34.83.14.74:28332
+    bitcoind.zmqpubrawtx=tcp://34.83.14.74:28333
     debuglevel=info
     bitcoin.active=1
     restlisten=0.0.0.0:8080
