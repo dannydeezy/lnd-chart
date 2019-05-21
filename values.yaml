@@ -4,7 +4,7 @@
 
 image:
   repository: gcr.io/lightning-sandbox/lnd
-  tag: 0.0.27
+  tag: 0.1.0
   pullPolicy: IfNotPresent
 
 service:
@@ -48,4 +48,7 @@ configurationFile:
     rpclisten=0.0.0.0:10009
     listen=0.0.0.0:9735
     bitcoin.testnet=1
+    tor.active=1
+    tor.v3=1
+    tor.privatekeypath=/root/.lnd/v3_onion_private_key
     alias=Lnd Test Helm
