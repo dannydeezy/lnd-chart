@@ -47,6 +47,8 @@ configurationFile:
     restlisten=0.0.0.0:8080
     rpclisten=0.0.0.0:10009
     listen=0.0.0.0:9735
+    externalip=35.230.110.248
+    tlsextraip=35.230.110.248
     bitcoin.testnet=1
     tor.active=1
     tor.v3=1
