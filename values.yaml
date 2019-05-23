@@ -50,7 +50,8 @@ configurationFile:
     externalip=35.230.110.248
     tlsextraip=35.230.110.248
     bitcoin.testnet=1
-    tor.active=1
-    tor.v3=1
-    tor.privatekeypath=/root/.lnd/v3_onion_private_key
     alias=Lnd Test Helm
+
+#tor.active=1
+#    tor.v3=1
+#    tor.privatekeypath=/root/.lnd/v3_onion_private_key
