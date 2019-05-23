@@ -69,6 +69,7 @@ spec:
           volumeMounts:
             - name: data
               mountPath: /root
+              readOnly: true
       volumes:
         {{- if .Values.configurationFile }}
         - name: config

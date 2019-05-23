@@ -19,7 +19,6 @@ backupService:
     tag: 4
     pullPolicy: IfNotPresent
 
-
 service:
   restPort: 8080
   lightningPort: 9735
