@@ -16,7 +16,7 @@ unlocker:
 backupService:
   image:
     repository: gcr.io/lightning-sandbox/backup-service
-    tag: 3
+    tag: 4
     pullPolicy: IfNotPresent
 
 
