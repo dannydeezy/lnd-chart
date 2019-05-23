@@ -53,7 +53,7 @@ spec:
           lifecycle:
             preStop:
               exec:
-                command: ['/lnd-main/lncli', '--network=testnet', 'stop']
+                command: ['/lnd-main/lncli', '--network={{ .Values.network }}', 'stop']
         - name: unlocker
           image: "{{ .Values.unlocker.image.repository }}:{{ .Values.unlocker.image.tag }}"
           imagePullPolicy: {{ .Values.unlocker.image.pullPolicy | quote }}

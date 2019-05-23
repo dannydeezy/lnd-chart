@@ -10,13 +10,15 @@ image:
 unlocker:
   image:
     repository: gcr.io/lightning-sandbox/unlocker
-    tag: 4
+    tag: 5
     pullPolicy: IfNotPresent
 
 service:
   restPort: 8080
   lightningPort: 9735
   rpcPort: 10009
+
+network: testnet
 
 persistence:
   enabled: true
