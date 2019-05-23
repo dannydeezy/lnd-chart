@@ -4,7 +4,7 @@
 
 image:
   repository: gcr.io/lightning-sandbox/lnd
-  tag: build-env-1
+  tag: build-env-2
   pullPolicy: IfNotPresent
 
 service:
