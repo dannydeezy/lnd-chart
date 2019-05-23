@@ -7,6 +7,12 @@ image:
   tag: build-env-5
   pullPolicy: IfNotPresent
 
+unlocker:
+  image:
+    repository: gcr.io/lightning-sandbox/unlocker
+    tag: 0
+    pullPolicy: ifNotPresent
+
 service:
   restPort: 8080
   lightningPort: 9735

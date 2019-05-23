@@ -54,6 +54,12 @@ spec:
             preStop:
               exec:
                 command: ['/lnd-main/lncli', '--network=testnet', 'stop']
+        - name: unlocker
+          image: "{{ .Values.unlocker.image.repository }}:{{ .Values.unlocker.image.tag }}"
+          imagePullPolicy: {{ .Values.unlocker.image.pullPolicy | quote }}
+          volumeMounts:
+            - name: data
+              mountPath: /root
       volumes:
         {{- if .Values.configurationFile }}
         - name: config
