@@ -13,6 +13,13 @@ unlocker:
     tag: 6
     pullPolicy: IfNotPresent
 
+backupService:
+  image:
+    repository: gcr.io/lightning-sandbox/backup-service
+    tag: 1
+    pullPolicy: IfNotPresent
+
+
 service:
   restPort: 8080
   lightningPort: 9735

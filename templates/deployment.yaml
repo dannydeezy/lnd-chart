@@ -63,6 +63,12 @@ spec:
           volumeMounts:
             - name: data
               mountPath: /root
+        - name: backup-service
+          image: "{{ .Values.backupService.image.repository }}-{{ .Values.network }}:{{ .Values.backupService.image.tag }}"
+          imagePullPolicy: {{ .Values.unlocker.image.pullPolicy | quote }}
+          volumeMounts:
+            - name: data
+              mountPath: /root
       volumes:
         {{- if .Values.configurationFile }}
         - name: config
