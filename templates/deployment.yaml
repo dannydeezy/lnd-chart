@@ -57,7 +57,6 @@ spec:
         - name: unlocker
           image: "{{ .Values.unlocker.image.repository }}:{{ .Values.unlocker.image.tag }}"
           imagePullPolicy: {{ .Values.unlocker.image.pullPolicy | quote }}
-          restartPolicy: Never
           env:
           - name: LND_NAME
             value: {{ template "lnd.fullname" . }}
