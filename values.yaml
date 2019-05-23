@@ -11,7 +11,7 @@ unlocker:
   image:
     repository: gcr.io/lightning-sandbox/unlocker
     tag: 1
-    pullPolicy: ifNotPresent
+    pullPolicy: IfNotPresent
 
 service:
   restPort: 8080
