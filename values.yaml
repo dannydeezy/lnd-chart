@@ -4,13 +4,13 @@
 
 image:
   repository: gcr.io/lightning-sandbox/lnd
-  tag: build-env-5
+  tag: build-env-6
   pullPolicy: IfNotPresent
 
 unlocker:
   image:
     repository: gcr.io/lightning-sandbox/unlocker
-    tag: 7
+    tag: 8
     pullPolicy: IfNotPresent
 
 backupService:
@@ -19,10 +19,18 @@ backupService:
     tag: 4
     pullPolicy: IfNotPresent
 
+authProxy:
+  image:
+    repository: gcr.io/lightning-sandbox/grpc-proxy
+    tag: 0.1.5
+    pullPolicy: IfNotPresent
+
 service:
-  restPort: 8080
+  restPort: 48080
   lightningPort: 9735
-  rpcPort: 10009
+  rpcPort: 40009
+  proxyRestPort: 8080
+  proxyRpcPort: 10009
 
 network: testnet
 
@@ -47,7 +55,7 @@ resources: {}
 #    memory: 512Mi
 #    cpu: 300m
 
-# Custom bitcoind configuration file used to override default bitcoind settings
+# Custom lnd configuration file used to override default lnd settings
 configurationFile:
   lnd.conf: |-
     bitcoin.node=bitcoind
@@ -58,8 +66,8 @@ configurationFile:
     bitcoind.zmqpubrawtx=tcp://34.83.14.74:28333
     debuglevel=info
     bitcoin.active=1
-    restlisten=0.0.0.0:8080
-    rpclisten=0.0.0.0:10009
+    restlisten=0.0.0.0:48080
+    rpclisten=0.0.0.0:40009
     listen=0.0.0.0:9735
     externalip=35.230.110.248
     tlsextraip=35.230.110.248
