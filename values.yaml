@@ -10,7 +10,7 @@ image:
 unlocker:
   image:
     repository: gcr.io/lightning-sandbox/unlocker
-    tag: 9
+    tag: 10
     pullPolicy: IfNotPresent
 
 backupService:
