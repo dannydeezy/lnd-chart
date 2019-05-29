@@ -44,11 +44,11 @@ spec:
               containerPort: {{ .Values.service.rpcPort }}
           env:
            - name: LIGHTNING_PORT
-             value: {{ .Values.service.lightningPort }}
+             value: "{{ .Values.service.lightningPort }}"
            - name: LND_REST_PORT
-             value: {{ .Values.service.restPort }}
+             value: "{{ .Values.service.restPort }}"
            - name: LND_RPC_PORT
-             value: {{ .Values.service.rpcPort }}
+             value: "{{ .Values.service.rpcPort }}"
           volumeMounts:
             - name: data
               mountPath: /root
@@ -68,7 +68,7 @@ spec:
           - name: LND_NAME
             value: {{ template "lnd.fullname" . }}
           - name: LND_REST_PORT
-            value: {{ .Values.service.restPort }}
+            value: "{{ .Values.service.restPort }}"
           volumeMounts:
             - name: data
               mountPath: /root
@@ -91,13 +91,13 @@ spec:
           - name: LND_NAME
             value: {{ template "lnd.fullname" . }}
           - name: LND_REST_PORT
-            value: {{ .Values.service.restPort }}
+            value: "{{ .Values.service.restPort }}"
           - name: LND_RPC_PORT
-            value: {{ .Values.service.rpcPort }}
+            value: "{{ .Values.service.rpcPort }}"
           - name: PROXY_RPC_PORT
-            value: {{ .Values.service.proxyRpcPort }}
+            value: "{{ .Values.service.proxyRpcPort }}"
           - name: PROXY_REST_PORT
-            value: {{ .Values.service.proxyRestPort }}
+            value: "{{ .Values.service.proxyRestPort }}"
       volumes:
         {{- if .Values.configurationFile }}
         - name: config
