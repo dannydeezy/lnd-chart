@@ -42,6 +42,13 @@ spec:
               containerPort: {{ .Values.service.restPort }}
             - name: rpc
               containerPort: {{ .Values.service.rpcPort }}
+          env:
+           - name: LIGHTNING_PORT
+             value: "{{ .Values.service.lightningPort }}"
+           - name: LND_REST_PORT
+             value: "{{ .Values.service.restPort }}"
+           - name: LND_RPC_PORT
+             value: "{{ .Values.service.rpcPort }}"
           volumeMounts:
             - name: data
               mountPath: /root
@@ -53,7 +60,44 @@ spec:
           lifecycle:
             preStop:
               exec:
-                command: ['/lnd-main/lncli', 'stop']
+                command: ['/lnd-main/lncli', '--network={{ .Values.network }}', 'stop']
+        - name: unlocker
+          image: "{{ .Values.unlocker.image.repository }}:{{ .Values.unlocker.image.tag }}"
+          imagePullPolicy: {{ .Values.unlocker.image.pullPolicy | quote }}
+          env:
+          - name: LND_NAME
+            value: {{ template "lnd.fullname" . }}
+          - name: LND_REST_PORT
+            value: "{{ .Values.service.restPort }}"
+          volumeMounts:
+            - name: data
+              mountPath: /root
+        - name: backup-service
+          image: "{{ .Values.backupService.image.repository }}-{{ .Values.network }}:{{ .Values.backupService.image.tag }}"
+          imagePullPolicy: {{ .Values.unlocker.image.pullPolicy | quote }}
+          volumeMounts:
+            - name: data
+              mountPath: /root
+              readOnly: true
+        - name: auth-proxy
+          image: "{{ .Values.authProxy.image.repository }}:{{ .Values.authProxy.image.tag }}"
+          imagePullPolicy: {{ .Values.authProxy.image.pullPolicy | quote }}
+          ports:
+            - name: proxyrest
+              containerPort: {{ .Values.service.proxyRestPort }}
+            - name: proxyrpc
+              containerPort: {{ .Values.service.proxyRpcPort }}
+          env:
+          - name: LND_NAME
+            value: {{ template "lnd.fullname" . }}
+          - name: LND_REST_PORT
+            value: "{{ .Values.service.restPort }}"
+          - name: LND_RPC_PORT
+            value: "{{ .Values.service.rpcPort }}"
+          - name: PROXY_RPC_PORT
+            value: "{{ .Values.service.proxyRpcPort }}"
+          - name: PROXY_REST_PORT
+            value: "{{ .Values.service.proxyRestPort }}"
       volumes:
         {{- if .Values.configurationFile }}
         - name: config

@@ -4,19 +4,41 @@
 
 image:
   repository: gcr.io/lightning-sandbox/lnd
-  tag: 0.0.22
+  tag: build-env-6
   pullPolicy: IfNotPresent
 
+unlocker:
+  image:
+    repository: gcr.io/lightning-sandbox/unlocker
+    tag: 10
+    pullPolicy: IfNotPresent
+
+backupService:
+  image:
+    repository: gcr.io/lightning-sandbox/backup-service
+    tag: 4
+    pullPolicy: IfNotPresent
+
+authProxy:
+  image:
+    repository: gcr.io/lightning-sandbox/grpc-proxy
+    tag: 0.1.5
+    pullPolicy: IfNotPresent
+
 service:
-  restPort: 8080
+  restPort: 48080
   lightningPort: 9735
-  rpcPort: 10009
+  rpcPort: 40009
+  proxyRestPort: 8080
+  proxyRpcPort: 10009
+
+network: testnet
 
 persistence:
   enabled: true
   ## database data Persistent Volume Storage Class
   ## If defined, storageClassName: <storageClass>
-  ## If set to "-", storageClassName: "", which disables dynamic provisioning
+  ## If set to "-", storageClassName: "", which disables dynamic provisioningt
   ## If undefined (the default) or set to null, no storageClassName spec is
   ##   set, choosing the default provisioner.  (gp2 on AWS, standard on
   ##   GKE, AWS & OpenStack)
@@ -33,22 +55,24 @@ resources: {}
 #    memory: 512Mi
 #    cpu: 300m
 
-# Custom bitcoind configuration file used to override default bitcoind settings
+# Custom lnd configuration file used to override default lnd settings
 configurationFile:
   lnd.conf: |-
     bitcoin.node=bitcoind
-    bitcoind.rpchost=35.233.229.74
-    bitcoind.rpcuser=bitgo
-    bitcoind.rpcpass=hodl
-    bitcoind.zmqpubrawblock=tcp://35.233.229.74:18500
-    bitcoind.zmqpubrawtx=tcp://35.233.229.74:18501
+    bitcoind.rpchost=34.83.14.74
+    bitcoind.rpcuser=rpcuser
+    bitcoind.rpcpass=rpcpassword
+    bitcoind.zmqpubrawblock=tcp://34.83.14.74:28332
+    bitcoind.zmqpubrawtx=tcp://34.83.14.74:28333
     debuglevel=info
     bitcoin.active=1
-    bitcoin.mainnet=1
-    restlisten=0.0.0.0:8080
-    rpclisten=0.0.0.0:10009
+    restlisten=0.0.0.0:48080
+    rpclisten=0.0.0.0:40009
     listen=0.0.0.0:9735
-    tor.active=1
-    tor.v3=1
-    tor.privatekeypath=/root/.lnd/v3_onion_private_key
-    alias=Lnd Helm
+    externalip=35.230.110.248
+    tlsextraip=35.230.110.248
+    bitcoin.testnet=1
+    alias=Lnd Test Helm
+#   tor.active=1
+#   tor.v3=1
+#   tor.privatekeypath=/root/.lnd/v3_onion_private_key
