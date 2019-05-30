@@ -10,14 +10,14 @@ metadata:
 spec:
   type: LoadBalancer
   ports:
-    - name: rest
-      port: {{ .Values.service.restPort }}
+    - name: proxyrest
+      port: {{ .Values.service.proxyRestPort }}
       targetPort: rest
     - name: lightning
       port: {{ .Values.service.lightningPort }}
       targetPort: lightning
-    - name: rpc
-      port: {{ .Values.service.rpcPort }}
+    - name: proxyrpc
+      port: {{ .Values.service.proxyRpcPort }}
       targetPort: rpc
   selector:
     app: {{ template "lnd.name" . }}
